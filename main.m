@@ -9,18 +9,18 @@
 #import <Foundation/Foundation.h>
 
 void sumAndAverage(NSArray *numbers, int *sum, double *average) {
-  sum = 0;
+  *sum = 0;
   for (NSNumber *number in numbers) {
     *sum += [number intValue];
   }
-  *average = *sum/[numbers count];
+  *average = *sum/(double)[numbers count];
 }
 
 int main(int argc, const char * argv[]) {
   @autoreleasepool {
     int sum;
     double average;
-    sumAndAverage(@[@1, @2, @3, @"'4"], &sum, &average);
+    sumAndAverage(@[@1, @2, @3, @4], &sum, &average);
     NSLog(@"%d (average %f)", sum, average);
   }
   return 0;
